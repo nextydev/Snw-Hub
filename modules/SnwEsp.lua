@@ -32,7 +32,7 @@ local function addPlayer(char, cfg)
     warn("[SnwEsp] Player Character not found!")
     return
   end
-  local HumanoidRootPart = char:WaitForChild("HumanoidRootPart")
+  local HumanoidRootPart = char:FindFirstChild("HumanoidRootPart")
   if not HumanoidRootPart then
     warn("[SnwEsp] HumanoidRootPart not found!")
     return
