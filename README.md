@@ -1,5 +1,6 @@
 # Snw-Hub
 Just another random exploit hub for Roblox!
+
 **Main Loader:**
 ```lua
 loadstring(game:HttpGet(https://raw.githubusercontent.com/nextydev/Snw-Hub/refs/heads/main/loaders/main.lua)()
@@ -9,9 +10,9 @@ loadstring(game:HttpGet(https://raw.githubusercontent.com/nextydev/Snw-Hub/refs/
 - Flee The Facility
 
 ## Modules
-Just a module that i use
+Just a module that i use in my randons scripts, **free use with credits!**
 
-### 
+### Discord
 
 > [!NOTE]
 > Join Snw Discord for more Updates and News!
