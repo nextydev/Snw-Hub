@@ -3,7 +3,7 @@ Just another random exploit hub for Roblox!
 
 **Main Loader:**
 ```lua
-loadstring(game:HttpGet(https://raw.githubusercontent.com/nextydev/Snw-Hub/refs/heads/main/loaders/main.lua)()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/nextydev/Snw-Hub/refs/heads/main/loaders/main.lua")()
 ```
 **Suported Games:**
 - Volleyball Legends
