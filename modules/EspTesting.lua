@@ -30,14 +30,14 @@ local function reloadObj()
 
         if obj.Name == "ComputerTable" and cfg.esp.pcs then
             if obj.Screen.Color == Color3.fromRGB(40, 127, 71) then
-                espcontainer:add(obj, {
+                espcontainer:Add(obj, {
                     AccentColor = Color3.fromRGB(40, 127, 71),
                     ArrowShow = false,
                     ShowLabel = false,
                     GroupName = "pcs"
                 })
             else 
-                espcontainer:add(obj, {
+                espcontainer:Add(obj, {
                     AccentColor = Color3.fromRGB(63, 159, 255),
                     ArrowShow = false,
                     ShowLabel = false,
@@ -47,7 +47,7 @@ local function reloadObj()
         end
 
         if obj.Name == "FreezePod" and cfg.esp.pods then
-            espcontainer:add(obj, {
+            espcontainer:Add(obj, {
                 AccentColor = Color3.fromRGB(0, 89, 255),
                 ShowLabel = false,
                 ArrowShow = false,
@@ -56,7 +56,7 @@ local function reloadObj()
         end
 
         if obj.Name == "ExitDoor" and cfg.esp.players then
-            espcontainer:add(obj, {
+            espcontainer:Add(obj, {
                 AccentColor = Color3.fromRGB(255, 242, 98),
                 ShowLabel = false,
                 ArrowShow = false,
@@ -72,7 +72,7 @@ local function reloadPlr()
     for _, target in ipairs(players:GetChildren()) do
         local char = target.Character
         if char ~= nil and target ~= players.LocalPlayer and cfg.esp.players then
-            espcontainer:add(char, {
+            espcontainer:Add(char, {
                 AccentColor = Color3.fromRGB(255, 255, 255),
                 ArrowShow = false,
                 ShowLabel = false,
@@ -82,8 +82,8 @@ local function reloadPlr()
     end
 end
 
-local isGameActive = game:GetService("ReplicatedStorage"):WaitForChild("isGameActive", 5)
-local gameStatus = game:GetService("ReplicatedStorage"):WaitForChild("gameStatus", 5)
+local isGameActive = game:GetService("ReplicatedStorage"):WaitForChild("IsGameActive", 5)
+local gameStatus = game:GetService("ReplicatedStorage"):WaitForChild("GameStatus", 5)
 
 if isGameActive and gameStatus then
     isGameActive.Changed:Connect(function()
