@@ -3,7 +3,7 @@ local players = game:GetService("Players")
 
 local function createEsp()
     local esp = Instance.new("Highlight")
-    esp.Name = "SnwEsp-"  -- Corrigido: Name com maiúscula
+    esp.Name = "SnwEsp-"
     esp.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
     esp.Enabled = true
     return esp
@@ -44,6 +44,7 @@ local function add(target, cfg)
     if target:IsA("Model") then
         esp.Adornee = target
         esp.Parent = target
+
     elseif target:IsA("Player") and target ~= players.LocalPlayer then
         local char = target.Character
         if char then
