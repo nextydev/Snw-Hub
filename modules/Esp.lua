@@ -39,8 +39,8 @@ function Snw:add(target, cfg)
     cfg = cfg or {}
     local AccentColor = cfg.AccentColor or Color3.fromRGB(255, 255, 255)
     local OutlineColor = cfg.OutlineColor or AccentColor
-    local AccentTransparency = cfg.AccentTransparency or 0.7
-    local OutlineTransparency = cfg.OutlineTransparency or 0.6
+    local AccentTransparency = cfg.AccentTransparency or 0.6
+    local OutlineTransparency = cfg.OutlineTransparency or 0.5
     local groupName = cfg.GroupName or "obj"
     
     local esp = Snw:createEsp()
