@@ -1,7 +1,16 @@
 local workspace = game:GetService("Workspace")
 local players = game:GetService("Players")
+local Snw = {}
 
-local function createEsp()
+local Snw = {}
+Snw.__index = Snw
+
+function Snw.new()
+  local self = setmetatable({}, Snw)
+  return self
+end
+
+function Snw:createEsp()
     local esp = Instance.new("Highlight")
     esp.Name = "SnwEsp-"
     esp.DepthMode = Enum.HighlightDepthMode.AlwaysOnTop
@@ -9,7 +18,7 @@ local function createEsp()
     return esp
 end
 
-local function clearAll()
+function Snw:clearAll()
     for _, obj in ipairs(workspace:GetDescendants()) do
         if obj:IsA("Highlight") and string.sub(obj.Name, 1, 7) == "SnwEsp-" then
             obj:Destroy()
@@ -17,7 +26,7 @@ local function clearAll()
     end
 end
 
-local function clearGroup(group)
+function Snw:clearGroup(group)
     local searchName = "SnwEsp-" .. group
     for _, obj in ipairs(workspace:GetDescendants()) do
         if obj:IsA("Highlight") and obj.Name == searchName then
@@ -26,15 +35,15 @@ local function clearGroup(group)
     end
 end
 
-local function add(target, cfg)
+function Snw:add(target, cfg)
     cfg = cfg or {}
     local AccentColor = cfg.AccentColor or Color3.fromRGB(255, 255, 255)
     local OutlineColor = cfg.OutlineColor or AccentColor
     local AccentTransparency = cfg.AccentTransparency or 0.7
-    local OutlineTransparency = cfg.OutlineTransparency or AccentTransparency
+    local OutlineTransparency = cfg.OutlineTransparency or 0.6
     local groupName = cfg.GroupName or "obj"
     
-    local esp = createEsp()
+    local esp = Snw:createEsp()
     esp.FillColor = AccentColor
     esp.OutlineColor = OutlineColor
     esp.FillTransparency = AccentTransparency
@@ -57,8 +66,4 @@ local function add(target, cfg)
     end
 end
 
-return {
-    clearAll = clearAll,
-    clearGroup = clearGroup,
-    add = add,
-}
+return Snw
