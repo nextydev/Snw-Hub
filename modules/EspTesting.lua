@@ -13,7 +13,7 @@ end
 
 local function clearAll()
     for _, obj in ipairs(workspace:GetDescendants()) do
-        if obj.Name:StartsWith("SnwEsp-") then
+        if obj:IsA("Highlight") and obj.Name:StartsWith("SnwEsp-") then
             obj:Destroy()
         end
     end
@@ -21,7 +21,7 @@ end
 
 local function clearGroup(group)
     for _, obj in ipairs(workspace:GetDescendants()) do
-        if obj.Name:StartsWith("SnwEsp-" .. group) then
+        if obj:IsA("Highlight") and obj.Name:StartsWith("SnwEsp-" .. group) then
             obj:Destroy()
         end
     end
